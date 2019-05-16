@@ -6,7 +6,9 @@ import { Recipe } from '../recipe';
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
-  recipes : Recipe[] = [];
+  recipes : Recipe[] = [
+    new Recipe("test", "this is a test", "https://angular.io/assets/images/logos/angular/logo-nav@2x.png")
+  ];
 
   constructor() { }
 
