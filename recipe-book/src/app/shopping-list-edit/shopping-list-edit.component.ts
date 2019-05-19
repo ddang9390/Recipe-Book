@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Ingredient } from '../ingredient';
 import { ShoppingListService } from '../shopping-list.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-shopping-list-edit',
@@ -8,8 +9,6 @@ import { ShoppingListService } from '../shopping-list.service';
   styleUrls: ['./shopping-list-edit.component.css']
 })
 export class ShoppingListEditComponent implements OnInit {
-  @ViewChild('nameInput') nameInputRef: ElementRef;
-  @ViewChild('amountInput') amountInputRef: ElementRef;
 
 
   constructor(private shoppingListService: ShoppingListService) { }
@@ -17,11 +16,11 @@ export class ShoppingListEditComponent implements OnInit {
   ngOnInit() {
   }
 
-  addIngredient(){
-    const name = this.nameInputRef.nativeElement.value;
-    const amount = this.amountInputRef.nativeElement.value
+  addIngredient(form: NgForm){
+    const value = form.value;
 
-    const newIngredient = new Ingredient(name, amount);
+
+    const newIngredient = new Ingredient(value.name, value.amount);
     this.shoppingListService.addIngredient(newIngredient);
   }
 
