@@ -28,4 +28,8 @@ export class ShoppingListService {
     //... allows us to add all from an array
     this.ingredients.push(...ingredients);
   }
+
+  getIngredient(index: number){
+    return this.ingredients[index];
+  }
 }
