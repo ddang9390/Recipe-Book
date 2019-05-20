@@ -3,6 +3,7 @@ import { RecipeService } from './recipe.service';
 import { ShoppingListService } from './shopping-list.service';
 import { DataStorageService } from './data-storage.service';
 import * as firebase from 'firebase';
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -19,8 +20,8 @@ export class AppComponent implements OnInit{
 
   ngOnInit(){
     firebase.initializeApp({
-      apiKey: 'AIzaSyC6A3pyWLbR-gP6QutgcQRsZG6CBdz7sgg',
-      authDomain: 'ng-recipe-book-a6367'
+      apiKey: environment.firebaseApiKey,
+      authDomain: environment.firebaseAuthDomain
     });
   }
 }
