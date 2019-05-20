@@ -7,14 +7,15 @@ import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 import { RecipeEditComponent } from './recipe-edit/recipe-edit.component';
 import { SignupComponent } from './signup/signup.component';
 import { SigninComponent } from './signin/signin.component';
+import { AuthGuardService } from './auth-guard.service';
 
 const routes: Routes = [
   {path: '', redirectTo: '/recipes', pathMatch: 'full'},//only redirect if full path is empty
   {path: 'recipes', component: RecipesComponent, children: [
     {path: '', component: RecipeStartComponent},
-    {path: 'new', component: RecipeEditComponent},
+    {path: 'new', component: RecipeEditComponent, canActivate: [AuthGuardService]},
     {path: ':id', component: RecipeDetailComponent},
-    {path: ':id/edit', component: RecipeEditComponent}
+    {path: ':id/edit', component: RecipeEditComponent, canActivate: [AuthGuardService]}
   ]},
   {path: 'shopping-list', component: ShoppingListComponent},
   {path: 'signup', component: SignupComponent },
