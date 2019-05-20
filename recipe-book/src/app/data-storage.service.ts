@@ -15,7 +15,8 @@ export class DataStorageService {
               private authService: AuthService) { }
 
   storeRecipes(): Observable<Object>{
-    return this.http.put('https://ng-recipe-book-a6367.firebaseio.com/recipes.json', this.recipeService
+    const token = this.authService.getToken();
+    return this.http.put('https://ng-recipe-book-a6367.firebaseio.com/recipes.json?auth=' + token, this.recipeService
       .getRecipes());
   }
 
