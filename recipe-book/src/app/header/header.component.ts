@@ -1,5 +1,6 @@
 import { Component, OnInit,  } from '@angular/core';
 import { DataStorageService } from '../data-storage.service';
+import { AuthService } from '../auth.service';
 
 
 @Component({
@@ -10,7 +11,8 @@ import { DataStorageService } from '../data-storage.service';
 export class HeaderComponent implements OnInit {
 
 
-  constructor(private dataStorageService: DataStorageService) { }
+  constructor(private dataStorageService: DataStorageService,
+              private authService: AuthService) { }
 
   ngOnInit() {
   }
