@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Ingredient } from './ingredient';
+import { Ingredient } from '../recipes/ingredient';
 import { Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'

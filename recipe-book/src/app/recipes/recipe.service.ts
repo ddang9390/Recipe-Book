@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Recipe } from './recipe';
 import { Ingredient } from './ingredient';
-import { ShoppingListService } from './shopping-list.service';
+import { ShoppingListService } from '../shopping-list/shopping-list.service';
 import { Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
