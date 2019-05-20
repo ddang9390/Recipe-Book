@@ -11,12 +11,7 @@ import { AuthGuardService } from '../auth/auth-guard.service';
 
 const routes: Routes = [
   {path: '', redirectTo: '/recipes', pathMatch: 'full'},//only redirect if full path is empty
-  {path: 'recipes', component: RecipesComponent, children: [
-    {path: '', component: RecipeStartComponent},
-    {path: 'new', component: RecipeEditComponent, canActivate: [AuthGuardService]},
-    {path: ':id', component: RecipeDetailComponent},
-    {path: ':id/edit', component: RecipeEditComponent, canActivate: [AuthGuardService]}
-  ]},
+  
   {path: 'shopping-list', component: ShoppingListComponent},
   {path: 'signup', component: SignupComponent },
   {path: 'signin', component: SigninComponent}
