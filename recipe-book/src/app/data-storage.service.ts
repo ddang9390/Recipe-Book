@@ -14,4 +14,13 @@ export class DataStorageService {
   storeRecipes(): Observable<Object>{
     return this.http.put('https://ng-recipe-book-a6367.firebaseio.com/recipes.json', this.recipeService.getRecipes());
   }
+
+  getRecipes(){
+    this.http.get('https://ng-recipe-book-a6367.firebaseio.com/recipes.json')
+      .subscribe(
+        (recipes: Recipe[]) => {
+          this.recipeService.setRecipes(recipes);
+        }
+      );
+  }
 }
