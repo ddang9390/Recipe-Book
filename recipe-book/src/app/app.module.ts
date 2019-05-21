@@ -11,11 +11,11 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 
 import { ShoppingListEditComponent } from './shopping-list/shopping-list-edit/shopping-list-edit.component';
 
-import { DropdownDirective } from './header/dropdown.directive';
+import { DropdownDirective } from './shared/dropdown.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 
 import { RecipeService } from './recipes/recipe.service';
-import { DataStorageService } from './auth/data-storage.service';
+import { DataStorageService } from './shared/data-storage.service';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { AuthService } from './auth/auth.service';

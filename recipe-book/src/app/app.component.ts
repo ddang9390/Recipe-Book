@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RecipeService } from './recipes/recipe.service';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
-import { DataStorageService } from './auth/data-storage.service';
+import { DataStorageService } from './shared/data-storage.service';
 import * as firebase from 'firebase';
 
 import { environment } from '../environments/environment';
